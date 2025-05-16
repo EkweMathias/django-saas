@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load account i18n %}
+
+
+{% block content %}
+<h1>
+     {% trans "Sign Out" %}
+</h1>
+
+<p>
+    {% trans 'Are you sure you want to sign out?' %}
+</p>
+<form action="{% url 'account_logout' %}" method="post">
+     {% csrf_token %}
+         {{ redirect_field }}
+    <button>
+         {% trans 'Sign Out' %}
+    </button>
+
+</form>
+
+{% endblock content %}
