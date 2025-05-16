@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-*5!b!&(qk@6aq#b1)mdi84(ij=@g_lnrad5d-uhsk+*qy9h#*&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_ID = 1
+
 ALLOWED_HOSTS = []
 
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "django.contrib.humanize",
+    'django.contrib.sites',
 
     #  THIRD PARTY APPS
     # allauth
@@ -68,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # Add the account middleware:
-    # "allauth.account.middleware.AccountMiddleware",
+   #s "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'saas.urls'
@@ -168,7 +171,8 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGIN_METHODS = {"username", "email"}
 
 
