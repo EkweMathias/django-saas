@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 
     "django.contrib.humanize",
     'django.contrib.sites',
+    
+    'todo',
 
     #  THIRD PARTY APPS
     # allauth
@@ -55,7 +57,7 @@ INSTALLED_APPS = [
 
     # crispy forms
     'crispy_forms',
-    'crispy_bootstrap5'
+  #  'crispy_bootstrap5',
 
 
 
@@ -71,7 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # Add the account middleware:
-   #s "allauth.account.middleware.AccountMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'saas.urls'
@@ -176,5 +178,5 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGIN_METHODS = {"username", "email"}
 
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
-CRISPY_TEMPLATE_PACKS = 'bootstrap5'
+# ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
