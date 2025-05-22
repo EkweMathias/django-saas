@@ -1,0 +1,14 @@
+services:
+  django:
+    container_name: saas
+    build:
+      context: ./saas
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./saas:/usr/src/app
+    ports:
+      - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=DJKLDJSJJDJKDDHDLKDKD
+      - ALLOWED_HOSTS=localhost, 127.0.0.1
